@@ -10,5 +10,8 @@ grep "exited" all_services.txt >> exited_services.txt
 grep "running" all_services.txt >> running_services.txt
 select option in "all_services.txt" "exited_services.txt" "running_services.txt";do
     cat $option
+    rm -f all_services.txt
+    rm -f exited_services.txt
+    rm -f running_services.txt
     break
 done
